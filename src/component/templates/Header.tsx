@@ -33,7 +33,7 @@ export default function Header() {
       <Box display={{ xs: 'none', sm: 'flex' }} maxWidth="md" sx={{ padding: "6px 0", marginLeft: "auto", marginRight: "auto" }}>
         <Stack component="nav" direction="row" justifyContent="center">
           { navLinks.map( (navLink) => (
-            <Box>
+            <Box key={navLink.url}>
                 <FCButton href={navLink.url} text={navLink.text} sx={{ color: "#000", fontWeight: "bold" }} />
             </Box>
             ))}
