@@ -1,14 +1,17 @@
-import React from 'react';
+import Header from '@/component/templates/Header';
+import Footer from '@/component/templates/Footer';
 import { Box } from '@mui/material';
-import Header from './Header';
-import Footer from './Footer';
- 
-export default function Layout() {
- 
-    return (
-        <Box>
-          <Header></Header>
-          <Footer></Footer>
-        </Box>
-    )
+
+type LayoutProps = {
+  children: React.ReactNode,
 };
+
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <Box>
+      <Header />
+      {children}
+      <Footer />
+    </Box>
+  );
+}

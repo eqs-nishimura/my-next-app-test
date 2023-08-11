@@ -1,9 +1,7 @@
-import Layout from '@/component/templates/Layout'
 import './globals.css'
 import type { Metadata } from 'next'
-import Header from '@/component/templates/Header';
-import Footer from '@/component/templates/Footer';
-import { Box } from '@mui/material';
+import Head from 'next/head';
+import Layout from '@/component/templates/Layout';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,15 +14,8 @@ export default function RootLayout({
   children: React.ReactNode,
 }) {
   return (
-    <html>
-      <head />
-      <body>
-        <Box>
-          <Header />
-          {children}
-          <Footer />
-        </Box>
-      </body>
-    </html>
+    <>
+      <Layout>{children}</Layout>
+    </>
   );
 }
