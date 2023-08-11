@@ -15,6 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <>
+      <Head>
+        <title>{metadata.title as string}</title>
+        <meta name="description" content={metadata.description as string} />
+      </Head>
       <Layout>{children}</Layout>
     </>
   );
