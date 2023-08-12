@@ -1,25 +1,30 @@
-import Box from '@mui/material/Box';
-import { AppBar, Container, Divider, Stack } from '@mui/material';
-import FCButton from './FCButton';
-import EditCalendarIcon from '@mui/icons-material/EditCalendar';
-import EmailIcon from '@mui/icons-material/Email';
+import { AppBar, Box, Button, Container, Divider, Stack } from '@mui/material';
 import MobileDrawer from '@/component/templates/MobileDrawer';
+import NavButtonList from '@/component/templates/NavButtonList';
 import { navLinks } from '@/lib/navigationMenu';
-import NavButtonList from './NavButtonList';
+import Link from 'next/link'
 
 export default function Header() {
   return (
     <AppBar component="header" position="static" elevation={6} sx={{ backgroundColor: "transparent", borderWidth: 0, }}>
       <Container maxWidth="md" sx={{ padding: "6px 10px" }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
-          <Stack direction="row" alignItems="center" spacing={1}>
-            <Box display={{ xs: "block", sm: "none" }}>
-              <img src="/images/logo.png" width={88} height={24} alt="みんちゅうSHARE-LIN" />
+          <Stack direction="row" alignItems="center" spacing={1}>            
+            <Box 
+              sx={{
+                width: {
+                  xs: 88,
+                  sm: 185
+                },
+                img: {
+                  width: '100%',
+                  height: 'auto'
+                }
+              }}
+            >
+              <img src="/images/logo.png" alt="みんちゅうSHARE-LIN" width="450" height="124" />
             </Box>
-            <Box display={{ xs: "none", sm: "block" }}>
-              <img src="/images/logo.png" width={185} height={51} alt="みんちゅうSHARE-LIN" />
-            </Box>
-            <Box sx={{ color: '#1C2B58', fontWeight: "bold", }}>フランチャイズオーナー募集</Box>
+            <Box sx={{ color: '#1C2B58', }}>フランチャイズオーナー募集</Box>
           </Stack>
           <Box display={{ xs: 'none', md: 'block' }}>
             <NavButtonList />
@@ -34,9 +39,11 @@ export default function Header() {
         <Stack component="nav" direction="row" justifyContent="center">
           { navLinks.map( (navLink) => (
             <Box key={navLink.url}>
-                <FCButton href={navLink.url} text={navLink.text} sx={{ color: "#000", fontWeight: "bold" }} />
+              <Link href={navLink.url} passHref>
+                <Button sx={{ color: "#000", fontWeight: "bold" }}>{navLink.text}</Button>
+              </Link>
             </Box>
-            ))}
+          )) }
         </Stack>
       </Box>
     </AppBar>
