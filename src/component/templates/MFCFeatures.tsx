@@ -9,8 +9,8 @@ export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
             {fcFeaturesTop.map((fcFeature) => (
-                <ScrollZoom>
-                    <CardComponent key={fcFeature.label} feature={fcFeature} />
+                <ScrollZoom key={fcFeature.label}>
+                    <CardComponent feature={fcFeature} />
                 </ScrollZoom>
             ))}
         </Stack>
