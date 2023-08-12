@@ -8,19 +8,19 @@ import MFCFeatures from '@/component/templates/MFCFeatures';
 export default function HomePage() {
   return (
     <Box sx={{ backgroundColor: "#FFF8E7" }}>
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ padding: { xs: "30px 10px", sm: "10px", md: "10px" } }}>
         <Container maxWidth="md">
-          <Stack direction={{ xs: "column-reverse", md: "row" }} alignItems="center">
-            <Stack spacing={3}>
+          <Stack direction={{ xs: "column-reverse", sm: "column-reverse", md: "row" }} alignItems="center">
+            <Stack spacing={3} alignItems="center">
               <Box>
                 <Box component="h1" 
-                sx={{ fontWeight:"bold", color:"#1C2B58" }}>
+                sx={{ fontWeight:"bold", color:"#1C2B58", textAlign: { xs: "center", sm: "center", md: "left" } }}>
                   <Box component="span" sx={{ display: "inline-block" }}>フランチャイズ</Box>
                   <Box component="span" sx={{ display: "inline-block" }}>オーナーで</Box>
                   <Box component="span" sx={{ display: "inline-block" }}>共に社会貢献を。</Box>
                 </Box>
               </Box>
-              <Box sx={{ color: "#1C2B58" }}>
+              <Box sx={{ color: "#1C2B58", textAlign: { xs: "center", sm: "center", md: "left" } }}>
                 <Box component="span" sx={{ display: "inline-block" }}>土地をお持ちの経営者、法人様へ</Box>
                 <Box component="span" sx={{ display: "inline-block" }}>不正駐輪撲滅を実現し、</Box>
                 <Box component="span" sx={{ display: "inline-block" }}>誰もが安心して暮らせるまちづくりを</Box>

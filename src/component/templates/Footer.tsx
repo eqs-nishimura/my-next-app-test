@@ -1,8 +1,16 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import { AppBar, Box, Container, Typography } from '@mui/material';
 
 export default function Footer() {
   return (
-    <Box>©IQSophia, Inc. All Rights Reserved.</Box>
+    <AppBar component="footer" position="static" elevation={0} sx={{ color: "#000", backgroundColor: "#FFF8E7" }}>
+        <Container maxWidth="md">
+            <Box sx={{ textAlign: 'center' }}>
+                <Typography variant="caption">
+                ©IQSophia, Inc. All Rights Reserved.
+                </Typography>
+            </Box>
+        </Container>
+    </AppBar>
   );
 }

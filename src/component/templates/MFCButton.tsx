@@ -6,20 +6,12 @@ interface ButtonWithLinkProps extends ButtonProps {
 }
 
 const MFCButton: React.FC<ButtonWithLinkProps> = ({ isRound, style, href, ...buttonProps }) => {
-  const roundStyles = isRound ? { borderRadius: '9999px' } : {};
+  const roundStyles = isRound ? { borderRadius: '9999px', textDecoration: 'none' } : { textDecoration: 'none' };
   const combinedStyles = { ...roundStyles, ...style };
 
-  const buttonComponent = <Button size="large" {...buttonProps} style={combinedStyles} />;
-
-  if (href) {
-    return (
-      <Link href={href} passHref>
-        {buttonComponent}
-      </Link>
-    );
-  }
-
-  return buttonComponent;
+  return (
+    <Button component={Link} href={href} size="large" {...buttonProps} style={combinedStyles} />
+  );
 }
 
 export default MFCButton;

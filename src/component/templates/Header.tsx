@@ -39,9 +39,10 @@ export default function Header() {
         <Stack component="nav" direction="row" justifyContent="center">
           { navLinks.map( (navLink) => (
             <Box key={navLink.url}>
-              <Link href={navLink.url} passHref>
+              {/* <Link href={navLink.url} passHref>
                 <Button sx={{ color: "#000", fontWeight: "bold" }}>{navLink.text}</Button>
-              </Link>
+              </Link> */}
+              <Button component={Link} href={navLink.url} sx={{ color: "#000", fontWeight: "bold" }}>{navLink.text}</Button>
             </Box>
           )) }
         </Stack>

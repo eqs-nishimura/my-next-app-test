@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, CardMedia, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
 import { fcFeaturesTop } from '@/lib/fcFeatures';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { ScrollZoom } from '@/component/ScrollZoom.client';
 
 import { COLORS } from '@/lib/themeColors';
 
@@ -8,7 +9,9 @@ export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
             {fcFeaturesTop.map((fcFeature) => (
-                <CardComponent key={fcFeature.label} feature={fcFeature} />
+                <ScrollZoom>
+                    <CardComponent key={fcFeature.label} feature={fcFeature} />
+                </ScrollZoom>
             ))}
         </Stack>
     );
