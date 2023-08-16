@@ -1,7 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Head from 'next/head';
 import Layout from '@/component/templates/Layout';
+
+import {Noto_Sans_JP} from "next/font/google";
+import React from "react";
+
+const font = Noto_Sans_JP({
+  weight: '600',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,13 +23,6 @@ export default function RootLayout({
   return (
     <>
       <html lang="ja">
-        <Head>
-          <title>{metadata.title + ""}</title>
-          <meta name="description" content={metadata.description + ""} />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
-        </Head>
         <body>
           <Layout>{children}</Layout>
         </body>

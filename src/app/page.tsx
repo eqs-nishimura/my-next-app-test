@@ -204,11 +204,11 @@ export default function HomePage() {
                   <Typography sx={{ fontWeight: "bold" }} variant="h4" component="h2">活躍中の先輩オーナーの声</Typography>
               </Box>
             </ScrollZoom>
-            <MFCCardList cards={fcCards_ownerVoice_Top} /> 
+            <MFCCardList cards={fcCards_ownerVoice_Top} />
           </Stack>
         </Container>
       </Box>
-      <MFCBookCTA />         
+      <MFCBookCTA />
     </Box>
   );
 }
