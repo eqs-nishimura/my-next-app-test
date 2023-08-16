@@ -95,7 +95,7 @@ export default function HomePage() {
           <Stack spacing={3}>
             <ScrollZoom>
               <Box sx={{ textAlign: "center", color: COLORS.darkBlue }}>
-                  <Box>OWNER's Work</Box>
+                  <Box>OWNER&apos;s Work</Box>
                   <Typography sx={{ fontWeight: "bold" }} variant="h4" component="h2">オーナーの仕事について</Typography>
               </Box>
             </ScrollZoom>
@@ -200,7 +200,7 @@ export default function HomePage() {
           <Stack spacing={4}>
             <ScrollZoom>
               <Box sx={{ textAlign: "center", color: COLORS.darkBlue }}>
-                  <Box>Owner’s Voice</Box>
+                  <Box>Owner&apos;s Voice</Box>
                   <Typography sx={{ fontWeight: "bold" }} variant="h4" component="h2">活躍中の先輩オーナーの声</Typography>
               </Box>
             </ScrollZoom>
