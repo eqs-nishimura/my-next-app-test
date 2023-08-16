@@ -49,7 +49,7 @@ export default function MFCBookCTA() {
                                     <img src="/images/top/bookcta_1.jpg" alt="説明会予約" width={317} height={212} />
                                     </Box>
                                 </Stack>
-                                <MFCButton
+                                <MFCButton glowEffect={true}
                                     href="/reservation" 
                                     startIcon={<EditCalendarIcon />} 
                                     isRound={true} 

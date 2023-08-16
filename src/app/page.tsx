@@ -38,7 +38,7 @@ export default function HomePage() {
                 <Box component="span" sx={{ display: "inline-block" }}>誰もが安心して暮らせるまちづくりを</Box>
               </Box>
               <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
-                <MFCButton 
+                <MFCButton glowEffect={true}
                   href="/reservation" 
                   startIcon={<EditCalendarIcon />} 
                   isRound={true} 
@@ -46,7 +46,7 @@ export default function HomePage() {
                     backgroundColor: COLORS.darkBlue
                   } }}
                 >説明会を予約する</MFCButton>
-                <MFCButton 
+                <MFCButton
                   href="/contact" 
                   startIcon={<EmailIcon />} 
                   isRound={true} 

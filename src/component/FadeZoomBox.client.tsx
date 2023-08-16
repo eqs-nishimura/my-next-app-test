@@ -17,13 +17,13 @@ export const FadeZoomBox: React.FC<FadeZoomProps> = ({ children, animationType =
 
   const fadeAnimationProps = {
     in: loaded,
-    style: { transitionDuration: '.1s', transitionTimingFunction: 'ease-in-out' }
+    style: { transitionTimingFunction: 'ease-in-out' }
   };
 
   const zoomAnimationProps = {
     in: loaded,
-    style: { transitionDuration: '.1s', transitionTimingFunction: 'ease-out' },
-    timeout: 3000
+    style: { transitionTimingFunction: 'ease-out' },
+    timeout: 600
   };
 
   return (
