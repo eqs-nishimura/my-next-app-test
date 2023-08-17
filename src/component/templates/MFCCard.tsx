@@ -11,23 +11,27 @@ type Card = {
       height: number;
     };
     title: string;
-    description: string;
+    description?: string;
 };
 
 type CardProps = {
     card: Card;
+    minHeight?: string | number;
+    titleColor?: string;
 };
 
 type MFCCardListProps = {
     cards: Card[];
+    minHeight?: string | number;
+    titleColor?: string;
 };
 
-export default function MFCCardList({ cards }: MFCCardListProps) {
+export default function MFCCardList({ cards, minHeight, titleColor }: MFCCardListProps) {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack justifyContent="center" direction={{ sm: "column", md: "row" }} spacing={2}>
-            {cards.map((fcCard) => (
-                <ScrollZoom key={fcCard.title} sx={{ height: "100%", display: "flex" }}>
-                    <CardComponent card={fcCard} />
+            {cards.map((fcCard, index) => (
+                <ScrollZoom key={index} sx={{ height: "100%", display: "flex" }}>
+                    <CardComponent card={fcCard} minHeight={minHeight} titleColor={titleColor} />
                  </ScrollZoom>
             ))}
         </Stack>
@@ -56,35 +60,58 @@ export default function MFCCardList({ cards }: MFCCardListProps) {
     );
 }
 
-function DesktopCard({ card: card }: CardProps) {
-  return (
-    <Stack spacing={2} sx={{ m: { xs: "10px 0" }, p: 3, maxWidth: { xs: "none", md: 340 }, minHeight: 410, borderRadius: "32px", boxShadow: 3, backgroundColor: "#fff", flex: 1 }}>
-        <Box component="h3" sx={{ textAlign: "center", color: COLORS.orange, fontWeight: "bold", whiteSpace: { xs: "pre-wrap", sm: "pre-wrap" } }}>{card.title}</Box>
-        <Box 
-            sx={{
-            "display": "block",
-            "img": {
-                width: '100%',
-                height: 'auto',
-                objectFit: "cover"
-            }
-            }}
-            >
-            <img 
-            src={card.mainImage.src} 
-            alt={card.title} 
+function DesktopCard({ card: card, minHeight = 410, titleColor = COLORS.orange }: CardProps) {
+    return (
+      <Stack
+        spacing={2}
+        sx={{
+          m: { xs: "10px 0" },
+          p: 3,
+          maxWidth: { xs: "none", md: 340 },
+          minHeight: minHeight,
+          borderRadius: "32px",
+          boxShadow: 3,
+          backgroundColor: "#fff",
+          flex: 1,
+        }}
+      >
+        <Box
+          component="h3"
+          sx={{
+            textAlign: "center",
+            color: titleColor,
+            fontWeight: "bold",
+            whiteSpace: { xs: "pre-wrap", sm: "pre-wrap" },
+          }}
+        >
+          {card.title}
+        </Box>
+        <Box
+          sx={{
+            display: "block",
+            img: {
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+            },
+          }}
+        >
+          <img
+            src={card.mainImage.src}
+            alt={card.title}
             width={card.mainImage.width}
-            height={card.mainImage.height} />
-            </Box>
-        <Box component="p">{card.description}</Box>
-    </Stack>
-  );
-}
+            height={card.mainImage.height}
+          />
+        </Box>
+        {card.description && <Box component="p">{card.description}</Box>}
+      </Stack>
+    );
+  }
 
-function MobileCard({ card: card }: CardProps) {
+function MobileCard({ card: card, titleColor = COLORS.orange }: CardProps) {
   return (
     <Stack spacing={1} sx={{ borderRadius: "32px", boxShadow: 3, backgroundColor: "#fff", p: 3 }}>
-        <Box component="h3" sx={{ textAlign: "center", color: COLORS.orange, fontWeight: "bold" }}>{card.title}</Box>
+        <Box component="h3" sx={{ textAlign: "center", color: titleColor, fontWeight: "bold" }}>{card.title}</Box>
         <Stack direction="row" alignItems="center">
             <Box 
                 sx={{
@@ -103,9 +130,11 @@ function MobileCard({ card: card }: CardProps) {
                 width={card.mainImage.width}
                 height={card.mainImage.height} />
             </Box>
-            <Box sx={{ p: 2, flex: 1 }}>
-                <Box>{card.description}</Box>
-            </Box>
+            {card.description && (
+                <Box sx={{ p: 2, flex: 1 }}>
+                    <Box>{card.description}</Box>
+                </Box>
+            )}
         </Stack>
     </Stack>
   );

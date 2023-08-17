@@ -3,6 +3,8 @@ import MFCButton from './MFCButton';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import { ScrollZoom } from '@/component/ScrollZoom.client';
 import { ScrollFade } from '../ScrollFade.client';
+import MFCSectionHeader from '../Text/MFCSectionHeader';
+import MFCImage from '../MFCImage';
 
 export default function MFCBookCTA() {
   return (
@@ -25,10 +27,7 @@ export default function MFCBookCTA() {
                     </Box>
                 <Stack spacing={4} sx={{ position: "relative", top: "50px", marginBottom: "100px" }}>
                     <ScrollZoom>
-                        <Stack sx={{ color: "#fff", textAlign: "center", textShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)" }}>
-                            <Box>みんちゅうSHARE-LINでフランチャイズ</Box>
-                            <Typography sx={{ fontWeight: "bold" }} variant="h5" component="h2">まずはお気軽に仕組みや条件をご確認ください！</Typography>
-                        </Stack>
+                        <MFCSectionHeader title="まずはお気軽に仕組みや条件をご確認ください！" subtitle="みんちゅうSHARE-LINでフランチャイズ" titleColor='white' subtitleColor='white' textShadow="0px 0px 10px rgba(0, 0, 0, 0.8)" />
                     </ScrollZoom>
                     <ScrollZoom>
                         <Box sx={{ backgroundColor: "#fff", padding: { xs: "20px", sm: "35px" }, borderRadius: "32px" }}>
@@ -38,16 +37,14 @@ export default function MFCBookCTA() {
                                         <Box component="h3">フランチャイズ説明会</Box>
                                         <Box>説明会終了後には<br />個別でご質問もお受けいたします</Box>
                                     </Box>
-                                    <Box sx={{                
-                                        width: 181,
-                                        height: 121,
-                                        'img': {
-                                        width: '100%',
-                                        height: 'auto'
-                                        }
-                                    }}>
-                                    <img src="/images/top/bookcta_1.jpg" alt="説明会予約" width={317} height={212} />
-                                    </Box>
+                                    <MFCImage
+                                        src="/images/top/bookcta_1.jpg"
+                                        width={317}
+                                        height={212}
+                                        widths={{ xs: "90%", sm: 181, md: 181 }}
+                                        heights={{ xs: "auto", sm: 121, md: 121 }}
+                                        alt="説明会予約"
+                                    />
                                 </Stack>
                                 <MFCButton glowEffect={true}
                                     href="/reservation" 

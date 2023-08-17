@@ -5,12 +5,13 @@ import { ScrollZoom } from '@/component/ScrollZoom.client';
 
 import { COLORS } from '@/lib/themeColors';
 import { ScrollFade } from '../ScrollFade.client';
+import MFCImage from '../MFCImage';
 
 export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
-            {fcFeaturesTop.map((fcFeature) => (
-                <ScrollZoom key={fcFeature.id}>
+            {fcFeaturesTop.map((fcFeature, index) => (
+                <ScrollZoom key={index}>
                     <CardComponent feature={fcFeature} />
                 </ScrollZoom>
             ))}
@@ -84,8 +85,8 @@ function DesktopCard({ feature }: CardProps) {
       <CardContent sx={{ p: 2 }}>
         <Box component="h3" sx={{ textAlign: "center", color: COLORS.orange, fontWeight: "bold" }}>{feature.title}</Box>
         <List>
-          {feature.points.map((point) => (
-            <ListItem key={point.title} sx={{ p: 0 }}>
+          {feature.points.map((point, index) => (
+            <ListItem key={index} sx={{ p: 0 }}>
               <ListItemIcon sx={{ marginRight: "8px", minWidth: 'auto' }}>
                 <CheckCircleIcon sx={{ color: COLORS.orange }} />
               </ListItemIcon>
@@ -105,29 +106,18 @@ function MobileCard({ feature }: CardProps) {
           {feature.label}
         </Box>
         <Stack direction="row" alignItems="center">
-            <Box 
-                sx={{
-                width: {
-                    xs: 88,
-                    sm: 185
-                },
-                img: {
-                    width: '100%',
-                    height: 'auto'
-                }
-                }}
-            >
-                <img 
-                src={feature.mainImage.src} 
-                alt={feature.title} 
+            <MFCImage
+                src={feature.mainImage.src}
                 width={feature.mainImage.width}
-                height={feature.mainImage.height} />
-            </Box>
+                height={feature.mainImage.height}
+                widths={{ xs: 88, sm: 185 }}
+                alt={feature.title}
+              />
             <Box sx={{ p: 2 }}>
                 <Box component="h3" sx={{ textAlign: "center", color: COLORS.orange, fontWeight: "bold" }}>{feature.title}</Box>
                 <List>
-                    {feature.points.map((point) => (
-                    <ListItem key={point.title} sx={{ p: 0 }}>
+                    {feature.points.map((point, index) => (
+                    <ListItem key={index} sx={{ p: 0 }}>
                         <ListItemIcon sx={{ marginRight: "8px", minWidth: 'auto' }}>
                         <CheckCircleIcon sx={{ color: COLORS.orange }} />
                         </ListItemIcon>

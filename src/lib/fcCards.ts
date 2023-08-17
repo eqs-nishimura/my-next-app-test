@@ -48,3 +48,30 @@ export const fcCards_ownerWork_Top = [
         description: "みんちゅうSHARE-LINを導入したことで、店舗前の不正駐輪が大幅に減り、お客様が安心して利用できる駐輪スペースとなりました。",
     }
   ];
+
+  export const fcCards_case_service = [    
+    {
+        title: "百貨店の駐輪場にシステムが置けなく不正駐輪されていたところの有効活用兼不正駐輪対策！",
+        mainImage: {
+            src: '/images/service/case1.jpg',
+            width: 208,
+            height: 139
+        },
+    },
+    {
+        title: "月極駐車場を駐輪場に変更して有効活用。Webプロモーションによる有効活用で月極めに空きがあることを認知！",
+        mainImage: {
+            src: '/images/service/case2.jpg',
+            width: 208,
+            height: 139
+        },
+    },
+    {
+        title: "使い道のなかったテナント脇のデッドスペースを「みんちゅうSHARE-LIN」で駐輪場として有効活用！",
+        mainImage: {
+            src: '/images/service/case3.jpg',
+            width: 208,
+            height: 139
+        },
+    }
+  ];

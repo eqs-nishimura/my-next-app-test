@@ -30,8 +30,8 @@ export default function MobileDrawer() {
             </Box>
             <Box display={{ xs: 'block', sm: 'none' }}>
             <List>
-                {navLinks.map((navLink) => (
-                    <ListItem key={navLink.text}>
+                {navLinks.map((navLink, index) => (
+                    <ListItem key={index}>
                     <ListItemText primary={navLink.text} />
                     </ListItem>
                 ))}

@@ -5,16 +5,12 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 import MFCButton from '@/component/templates/MFCButton';
 import MFCBookCTA from '@/component/templates/MFCBookCTA';
-import MFCCardList from '@/component/templates/MFCCard';
 import { ScrollZoom } from '@/component/ScrollZoom.client';
 
-import { fcCards_ownerWork_Top, fcCards_ownerVoice_Top } from '@/lib/fcCards';
-import { fcFeaturesTop } from '@/lib/fcFeatures';
-
 import { COLORS } from '@/lib/themeColors';
-import FadeZoomBox from '@/component/FadeZoomBox.client';
-import { ScrollFade } from '@/component/ScrollFade.client';
 import { fcOwner_flow } from '@/lib/fcOwner';
+import MFCSectionHeader from '@/component/Text/MFCSectionHeader';
+import MFCMainSection from '@/component/templates/MFCMainSection';
 
 export const metadata = {
   title: 'オーナーになるには',
@@ -29,37 +25,30 @@ const MyPage = () => {
     <Box sx={{ backgroundColor: "#FFF8E7" }}>
       <Box sx={{ padding: { xs: "30px 10px", sm: "30px 10px", md: "30px 10px" } }}>
         <Container maxWidth="md">
-          <Stack direction={{ xs: "column-reverse", sm: "column-reverse", md: "row" }} alignItems="center">
-            <FadeZoomBox animationType="fade">
-            <Stack spacing={3} alignItems="center" sx={{ flex: 1 }}>
-              <Box>
-                <Box component="p" sx={{ display: "inline-block" }}>How to be Owner</Box>
-                <Typography color={COLORS.darkBlue} sx={{ fontWeight: "bold", textAlign: { xs: "center", sm: "center", md: "left" }}} variant="h3" component="h1">
-                    <Box component="span" sx={{ display: "inline-block" }}>オーナーに</Box>
-                    <Box component="span" sx={{ display: "inline-block" }}>なるには</Box>
-                </Typography>
-              </Box>              
-            </Stack>
-            </FadeZoomBox>
-            <FadeZoomBox animationType="zoom">
-            <Box sx={{                
-                width: { xs: 200, sm: 300, md: 447 },
-                height: { xs: 200, sm: 300, md: 447 },
-                'img': {
-                  width: '100%',
-                  height: 'auto'
-                }
-              }}>
-              <img src="/images/top/fv-main.png" alt="FV" width={447} height={447} />
-            </Box>
-            </FadeZoomBox>
-          </Stack>
+          <MFCMainSection
+            titleProps={{
+              title: [
+                "オーナーに",
+                "なるには"
+              ],
+              subtitle: [
+                "How to be Owner"
+              ]
+            }}
+            imageSrc="/images/top/fv-main.png"
+            imageWidth={447}
+            imageHeight={447}
+            imageWidths={{ xs: 200, sm: 300, md: 447 }}
+            imageHeights={{ xs: 200, sm: 300, md: 447 }}
+            altText="FV"          
+            stackDirection={{ xs: "column-reverse", sm: "column-reverse", md: "row" }}
+          />
         </Container>
       </Box>
       <Box>
         <Container maxWidth="md">
-          <Stack alignItems="center" spacing={3}>
-            <Stack direction={{ sm: "column", md: "row" }} spacing={{ sm: 6, md: 3 }}>
+          <Stack alignItems="center" spacing={7}>
+            <Stack direction={{ xs: "column", sm: "column", md: "row" }} spacing={{ xs: 2, sm: 2, md: 3 }}>
               {[firstTwoPoints, lastTwoPoints].map((pointGroup, index) => (
                 <Stack direction="row" spacing={3} justifyContent="center" key={index}>
                   {pointGroup.map((point) => (
@@ -71,9 +60,10 @@ const MyPage = () => {
                           backgroundColor: "#fff",
                           color: COLORS.orange,
                           border: `10px solid ${COLORS.lightOrange}`,
+                          borderWidth: { xs: "6px", sm: "10px", md: "10px" },
                           borderRadius: "9999px",
-                          width: 140,
-                          height: 140,
+                          width: { xs: 140, sm: 200, md: 180 },
+                          height: { xs: 140, sm: 200, md: 180 },
                           whiteSpace: "pre-wrap",
                           textAlign: "center",
                           fontWeight: "bold",
@@ -86,14 +76,16 @@ const MyPage = () => {
                 </Stack>
               ))}
             </Stack>
-            <MFCButton 
-                href="/reservation" 
-                endIcon={<ArrowCircleRightIcon style={{ transform: 'rotate(90deg)' }} />} 
-                isRound={true} 
-                sx={{ width: 300, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {
-                  backgroundColor: COLORS.darkBlue
-                } }}
-              >オーナー条件の詳細をみる</MFCButton>
+            <ScrollZoom>
+              <MFCButton 
+                  href="/reservation" 
+                  endIcon={<ArrowCircleRightIcon style={{ transform: 'rotate(90deg)' }} />} 
+                  isRound={true} 
+                  sx={{ width: 300, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {
+                    backgroundColor: COLORS.darkBlue
+                  } }}
+                >オーナー条件の詳細をみる</MFCButton>
+            </ScrollZoom>
           </Stack>
         </Container>
       </Box>
@@ -101,17 +93,18 @@ const MyPage = () => {
         <Container maxWidth="md">
           <Stack spacing={3}>
             <ScrollZoom>
-              <Box sx={{ textAlign: "center", color: COLORS.darkBlue }}>
-                  <Box>Flow</Box>
-                  <Typography sx={{ fontWeight: "bold" }} variant="h4" component="h2">オーナーになるまでの流れ</Typography>
-              </Box>
+              <MFCSectionHeader title="オーナーになるまでの流れ" subtitle="Flow" />
             </ScrollZoom>
             <Stack spacing={2}>
               {fcOwner_flow.map((flow, index) => (
-                <React.Fragment key={flow.title}>
+                <React.Fragment key={index}>
                   <ScrollZoom>
-                    <Stack direction="row" spacing={3} alignItems="center" sx={{ backgroundColor: "#fff", boxShadow: 3, p: 6, borderRadius: "32px" }}>
-                      <Typography color={COLORS.orange} sx={{ fontWeight: "bold", whiteSpace: "pre-wrap" }} variant="h6" component="h3">{flow.title}</Typography>
+                    <Stack direction={{ xs: "column", sm: "row" }} spacing={3} alignItems="center" sx={{ backgroundColor: "#fff", boxShadow: 3, p: 6, borderRadius: "32px" }}>
+                      <Typography color={COLORS.orange} sx={{ width: { xs: "auto", sm: "40%", md: "200px" }, fontWeight: "bold", whiteSpace: "pre-wrap", textAlign: { xs: "center", sm: "left", md: "left" } }} variant="h6" component="h3">
+                        {flow.title.map((line, index) => (
+                          <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
+                        ))}
+                      </Typography>
                       <Box component="p" sx={{ flex: 1 }}>{flow.description}</Box>
                     </Stack>
                   </ScrollZoom>
