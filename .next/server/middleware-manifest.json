@@ -1,6 +1,27 @@
 {
   "sortedMiddleware": [],
   "middleware": {},
-  "functions": {},
+  "functions": {
+    "/api/email/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "prerender-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/api/email/route.js"
+      ],
+      "name": "app/api/email/route",
+      "page": "/api/email/route",
+      "matchers": [
+        {
+          "regexp": "^/api/email$",
+          "originalSource": "/api/email"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    }
+  },
   "version": 2
 }
