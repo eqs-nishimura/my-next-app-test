@@ -246,7 +246,7 @@ const tree = {
         '',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 63590)), "/Users/kensuke/GoogleDrive/GoogleDrive_Sync/01_Doing/みんちゅうFC/my-next-app/src/app/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 69710)), "/Users/kensuke/GoogleDrive/GoogleDrive_Sync/01_Doing/みんちゅうFC/my-next-app/src/app/page.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 73881))).default(props))],
     apple: [],
@@ -300,135 +300,25 @@ const routeModule = new AppPageRouteModule({
 
 /***/ }),
 
-/***/ 65943:
+/***/ 69649:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 57750));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 96474));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 17421, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 29498));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 60568));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 17421, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 43872));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8349));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 93665));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 33987, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 94166));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 39182));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 13380));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 72670))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 57750));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 96474));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8349))
 
 /***/ }),
 
-/***/ 72670:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ Contact)
-});
-
-// EXTERNAL MODULE: external "next/dist/compiled/react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(56786);
-// EXTERNAL MODULE: ./node_modules/react-hook-form/dist/index.esm.mjs
-var index_esm = __webpack_require__(66558);
-;// CONCATENATED MODULE: ./src/utils/send-email.ts
-function sendEmail(data) {
-    const apiEndpoint = "/api/email";
-    fetch(apiEndpoint, {
-        method: "POST",
-        body: JSON.stringify(data)
-    }).then((res)=>res.json()).then((response)=>{
-        alert(response.message);
-    }).catch((err)=>{
-        alert(err);
-    });
-}
-
-;// CONCATENATED MODULE: ./src/component/Contact.tsx
-/* __next_internal_client_entry_do_not_use__ default auto */ 
-
-
-const MFCContact = ()=>{
-    const { register, handleSubmit } = (0,index_esm/* useForm */.cI)();
-    function onSubmit(data) {
-        sendEmail(data);
-    }
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("form", {
-        onSubmit: handleSubmit(onSubmit),
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: "mb-5",
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("label", {
-                        htmlFor: "name",
-                        className: "mb-3 block text-base font-medium text-black",
-                        children: "Full Name"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("input", {
-                        type: "text",
-                        placeholder: "Full Name",
-                        className: "w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md",
-                        ...register("name", {
-                            required: true
-                        })
-                    })
-                ]
-            }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: "mb-5",
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("label", {
-                        htmlFor: "email",
-                        className: "mb-3 block text-base font-medium text-black",
-                        children: "Email Address"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("input", {
-                        type: "email",
-                        placeholder: "example@domain.com",
-                        className: "w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md",
-                        ...register("email", {
-                            required: true
-                        })
-                    })
-                ]
-            }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: "mb-5",
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("label", {
-                        htmlFor: "message",
-                        className: "mb-3 block text-base font-medium text-black",
-                        children: "Message"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("textarea", {
-                        rows: 4,
-                        placeholder: "Type your message",
-                        className: "w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md",
-                        ...register("message", {
-                            required: true
-                        })
-                    })
-                ]
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                children: /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                    className: "hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none",
-                    children: "Submit"
-                })
-            })
-        ]
-    });
-};
-/* harmony default export */ const Contact = (MFCContact);
-
-
-/***/ }),
-
-/***/ 63590:
+/***/ 69710:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -831,23 +721,7 @@ var fcCards = __webpack_require__(53669);
 var MFCSectionHeader = __webpack_require__(19232);
 // EXTERNAL MODULE: ./src/component/templates/MFCMainSection.tsx + 2 modules
 var MFCMainSection = __webpack_require__(73572);
-// EXTERNAL MODULE: ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js
-var module_proxy = __webpack_require__(61363);
-;// CONCATENATED MODULE: ./src/component/Contact.tsx
-
-const proxy = (0,module_proxy.createProxy)(String.raw`/Users/kensuke/GoogleDrive/GoogleDrive_Sync/01_Doing/みんちゅうFC/my-next-app/src/component/Contact.tsx`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule, $$typeof } = proxy;
-const __default__ = proxy.default;
-
-
-/* harmony default export */ const Contact = (__default__);
 ;// CONCATENATED MODULE: ./src/app/page.tsx
-
 
 
 
@@ -1214,8 +1088,7 @@ function HomePage() {
                     })
                 })
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(MFCBookCTA/* default */.Z, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Contact, {})
+            /*#__PURE__*/ jsx_runtime_.jsx(MFCBookCTA/* default */.Z, {})
         ]
     });
 }
@@ -1230,7 +1103,7 @@ function HomePage() {
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [587,978,374,512,120], () => (__webpack_exec__(29106)));
+var __webpack_exports__ = __webpack_require__.X(0, [587,913,167,703,24,393,120], () => (__webpack_exec__(29106)));
 module.exports = __webpack_exports__;
 
 })();

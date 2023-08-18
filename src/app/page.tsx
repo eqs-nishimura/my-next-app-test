@@ -173,7 +173,6 @@ export default function HomePage() {
         </Container>
       </Box>
       <MFCBookCTA />
-      <MFCContact />
     </Box>
   );
 }
