@@ -23,7 +23,7 @@ export default async function handler(
       try {
         await transporter.sendMail({
         from: process.env.EMAIL,
-        to: process.env.EMAIL,
+        to: process.env.EMAIL_EQS,
           subject: title,
           text: body,
         })
