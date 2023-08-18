@@ -1,4 +1,6 @@
 
+// export const runtime = 'edge';
+
 import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
