@@ -14,8 +14,8 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.4",
     "@next/font": "^13.4.16",
+    "@react-email/render": "^0.0.7",
     "@types/node": "20.4.9",
-    "@types/nodemailer": "^6.4.9",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "axios": "^1.4.0",
@@ -36,6 +36,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.5.0"
+    "@cloudflare/next-on-pages": "^1.5.0",
+    "@types/nodemailer": "^6.4.9"
   }
 }

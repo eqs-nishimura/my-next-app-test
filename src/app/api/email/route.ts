@@ -3,7 +3,6 @@ import nodemailer from 'nodemailer'
 export async function POST(req: Request) {
   const { name, email } = await req.json()
 
-
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST!,
     port: Number(process.env.EMAIL_PORT!),
@@ -20,6 +19,7 @@ export async function POST(req: Request) {
     subject: "Spring flower sales💐 Don't miss out!",
   }
 
+  // ensure name and email are included
   if (!name || !email) {
     return new Response(
       JSON.stringify({ message: 'Please submit your name and email' }),
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     )
   }
 
+  // send email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error)
