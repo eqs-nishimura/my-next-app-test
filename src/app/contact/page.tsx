@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import Contact from '@/component/contact';
 
 export default function Home() {

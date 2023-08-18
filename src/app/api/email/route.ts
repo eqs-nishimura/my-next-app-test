@@ -1,8 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
-
-// export const runtime = 'edge'
 
 export async function POST(request: NextRequest) {
   const { email, name, message } = await request.json();
@@ -30,7 +27,7 @@ export async function POST(request: NextRequest) {
   );
 
 
-  const mailOptions: Mail.Options = {
+  const mailOptions = {
     from: process.env.EMAIL,
     to: email,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
