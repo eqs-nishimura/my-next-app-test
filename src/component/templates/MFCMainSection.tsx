@@ -51,7 +51,7 @@ const MFCMainSection = ({
             {isHome && (
               <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
                 <MFCButton glowEffect={true}
-                href="/reservation" 
+                href="/contact?seminar=1" 
                 startIcon={<EditCalendarIcon />} 
                 isRound={true} 
                 sx={{ width: 200, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {

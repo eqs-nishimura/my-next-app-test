@@ -78,7 +78,7 @@ const MyPage = () => {
             </Stack>
             <ScrollZoom>
               <MFCButton 
-                  href="/reservation" 
+                  href="/contact?seminar=1" 
                   endIcon={<ArrowCircleRightIcon style={{ transform: 'rotate(90deg)' }} />} 
                   isRound={true} 
                   sx={{ width: 300, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {

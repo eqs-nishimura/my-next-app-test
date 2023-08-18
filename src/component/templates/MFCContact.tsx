@@ -2,8 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, TextField, Container, Typography, Checkbox, FormControlLabel, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 export const MFCContact = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const seminarParam = searchParams.get('seminar');
+
     const initialState = {
         name: '',
         email: '',
@@ -21,8 +26,8 @@ export const MFCContact = () => {
     const [message, setMessage] = useState(initialState.message);
     const [address, setAddress] = useState(initialState.address);
     const [phone, setPhone] = useState(initialState.phone);
-    const [seminar, setSeminar] = useState(initialState.seminar);
-    const [seminarDate, setSeminarDate] = useState(initialState.seminarDate);
+    const [seminar, setSeminar] = useState(seminarParam ? true : initialState.seminar);
+    const [seminarDate, setSeminarDate] = useState(seminarParam ? '2023-09-10' : initialState.seminarDate);
     const [company, setCompany] = useState(initialState.company);
     const [errors, setErrors] = useState<{[key: string]: string}>({});
 

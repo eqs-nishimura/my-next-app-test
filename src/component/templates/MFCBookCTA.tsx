@@ -47,7 +47,7 @@ export default function MFCBookCTA() {
                                     />
                                 </Stack>
                                 <MFCButton glowEffect={true}
-                                    href="/reservation" 
+                                    href="/contact?seminar=1" 
                                     startIcon={<EditCalendarIcon />} 
                                     isRound={true} 
                                     sx={{ width: 200, backgroundColor: "#1C2B58", color: "#fff", "&:hover": {

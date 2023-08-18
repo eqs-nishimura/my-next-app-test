@@ -8,7 +8,7 @@ export default function NavButtonList() {
   return (
     <Stack direction="row" alignItems="center" spacing={1}>
       <MFCButton 
-        href="/reservation" 
+        href="/contact?seminar=1" 
         startIcon={<EditCalendarIcon />} 
         isRound={true} 
         sx={{ width: 150, backgroundColor: "#1C2B58", color: "#fff", "&:hover": {
