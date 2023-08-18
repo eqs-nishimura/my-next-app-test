@@ -1,29 +1,6 @@
 {
   "sortedMiddleware": [],
   "middleware": {},
-  "functions": {
-    "/contact/page": {
-      "files": [
-        "server/server-reference-manifest.js",
-        "server/app/contact/page_client-reference-manifest.js",
-        "server/middleware-build-manifest.js",
-        "server/middleware-react-loadable-manifest.js",
-        "server/next-font-manifest.js",
-        "prerender-manifest.js",
-        "server/edge-runtime-webpack.js",
-        "server/app/contact/page.js"
-      ],
-      "name": "app/contact/page",
-      "page": "/contact/page",
-      "matchers": [
-        {
-          "regexp": "^/contact$",
-          "originalSource": "/contact"
-        }
-      ],
-      "wasm": [],
-      "assets": []
-    }
-  },
+  "functions": {},
   "version": 2
 }
