@@ -300,18 +300,18 @@ const routeModule = new AppPageRouteModule({
 
 /***/ }),
 
-/***/ 47043:
+/***/ 65943:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 29498));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 60568));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 57750));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 96474));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 43872));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 29498));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 60568));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 17421, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 43872));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8349));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 33987, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 93665));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 33987, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 94166));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 39182));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 13380));
@@ -328,8 +328,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ Contact),
-  runtime: () => (/* binding */ runtime)
+  "default": () => (/* binding */ Contact)
 });
 
 // EXTERNAL MODULE: external "next/dist/compiled/react/jsx-runtime"
@@ -350,8 +349,7 @@ function sendEmail(data) {
 }
 
 ;// CONCATENATED MODULE: ./src/component/Contact.tsx
-/* __next_internal_client_entry_do_not_use__ runtime,default auto */ 
-const runtime = "edge";
+/* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
 const MFCContact = ()=>{
@@ -845,8 +843,6 @@ const proxy = (0,module_proxy.createProxy)(String.raw`/Users/kensuke/GoogleDrive
 // is a client boundary.
 const { __esModule, $$typeof } = proxy;
 const __default__ = proxy.default;
-
-const e0 = proxy["runtime"];
 
 
 /* harmony default export */ const Contact = (__default__);
