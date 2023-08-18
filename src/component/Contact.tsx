@@ -1,5 +1,7 @@
 'use client';
 
+export const runtime = 'edge';
+
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/utils/send-email';
