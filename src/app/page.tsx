@@ -15,8 +15,6 @@ import { ScrollFade } from '@/component/ScrollFade.client';
 import MFCSectionHeader from '@/component/Text/MFCSectionHeader';
 import MFCMainSection from '@/component/templates/MFCMainSection';
 import MFCImage from '@/component/MFCImage';
-import MFCContact from '@/component/Contact';
-
 
 export default function HomePage() {
   return (
