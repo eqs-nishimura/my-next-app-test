@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { FormData } from '@/component/Contact';
 
 export function sendEmail(data: FormData) {
