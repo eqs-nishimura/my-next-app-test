@@ -27,13 +27,13 @@ export const MFCContact = () => {
     const [errors, setErrors] = useState<{[key: string]: string}>({});
 
     const validateForm = () => {
-    const [errors, setErrors] = useState<{[key: string]: string}>({});
-    if (!name) errors['name'] = '名前は必須です。';
-    if (!email) errors['email'] = 'メールアドレスは必須です。';
-    if (!phone) errors['phone'] = '電話番号は必須です。';
-    if (!company) errors['company'] = '会社名は必須です。';
-    setErrors(errors);
-    return Object.keys(errors).length === 0;
+        const errors: {[key: string]: string} = {};
+        if (!name) errors['name'] = '名前は必須です。';
+        if (!email) errors['email'] = 'メールアドレスは必須です。';
+        if (!phone) errors['phone'] = '電話番号は必須です。';
+        if (!company) errors['company'] = '会社名は必須です。';
+        setErrors(errors);
+        return Object.keys(errors).length === 0;
     };
 
   const resetForm = () => {
