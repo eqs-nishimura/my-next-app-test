@@ -14,8 +14,8 @@ import MFCFeatures from './MFCFeatures';
 
 export const ParentComponent: React.FC = () => {
     const [isSlideUpFinished, setIsSlideUpFinished] = useState(false);
-    const slideUpDuration = 5; // MFCFVSlideUpAnimationのdurationを指定
-    const slideUpDelay = 5; // MFCFVSlideUpAnimationのdelayを指定
+    const slideUpDuration = 3; // MFCFVSlideUpAnimationのdurationを指定
+    const slideUpDelay = 3; // MFCFVSlideUpAnimationのdelayを指定
     const slideInDelayIncrement = 0.5; // SlideInのアニメーションの遅延増分を指定
     
     useEffect(() => {
@@ -46,7 +46,7 @@ export const ParentComponent: React.FC = () => {
                 ]}
                 isSlideUpFinished={isSlideUpFinished}
                 />
-                <SlideIn duration={0.5} delay={2} angle={0} inView={isSlideUpFinished}>
+                <SlideIn duration={0.5} delay={2 + slideUpDuration + slideUpDelay} angle={0} inView={isSlideUpFinished}>
                     <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
                         <MFCButton glowEffect={true}
                         href="/contact?seminar=1" 
@@ -65,7 +65,7 @@ export const ParentComponent: React.FC = () => {
                         } }}
                         >お問い合わせ</MFCButton>
                     </Stack>
-                    </SlideIn>           
+                    </SlideIn>
                 </Stack>
                 <MFCImage
                         src="/images/top/fv-main.png"
