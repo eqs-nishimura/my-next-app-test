@@ -34,11 +34,11 @@ const MFCTitle = ({
   descriptionTextAlign,
   fontSize = { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3rem', xl: '3rem' },
   isSlideUpFinished = false,
-  slideUpDuration = 3,
-  slideUpDelay = 3
+  slideUpDuration = 0.5,
+  slideUpDelay = 0.3
 }: TitleWithDescriptionProps) => {
   const titleDelay = isSlideUpFinished ? 0.1 : 0.1 + slideUpDuration + slideUpDelay;
-  const descriptionDelay = isSlideUpFinished ? 0.1 : 0.1 + slideUpDuration + slideUpDelay;
+  const descriptionDelay = isSlideUpFinished ? 1.1 : 1.1 + slideUpDuration + slideUpDelay;
   return (
     <Stack spacing={3}>
       <Stack>
