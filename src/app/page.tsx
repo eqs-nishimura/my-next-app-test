@@ -16,52 +16,12 @@ import MFCMainSection from '@/component/templates/MFCMainSection';
 import MFCImage from '@/component/MFCImage';
 import { MFCFVSlideUpAnimation } from '@/component/MFCAnimation';
 import Header from '@/component/templates/Header';
+import { ParentComponent } from '@/component/templates/Home';
 
 export default function HomePage() {
   return (
     <Box sx={{ backgroundColor: "#FFF8E7" }}>
-      <MFCFVSlideUpAnimation>
-        <Header />
-        <Box sx={{ padding: { xs: "30px 10px", sm: "30px 10px", md: "30px 10px" } }}>
-          <Container maxWidth="md">          
-            <MFCMainSection
-              titleProps={{
-                title: [
-                  "フランチャイズ",
-                  "オーナーで",
-                  "共に社会貢献を。"
-                ],
-                description: [
-                  "土地をお持ちの経営者、法人様へ",
-                  "不正駐輪撲滅を実現し、",
-                  "誰もが安心して暮らせるまちづくりを"
-                ]
-              }}
-              imageSrc="/images/top/fv-main.png"
-              imageWidth={447}
-              imageHeight={447}
-              imageWidths={{ xs: 200, sm: 300, md: 447 }}
-              imageHeights={{ xs: 200, sm: 300, md: 447 }}
-              altText="FV"          
-              stackDirection={{ xs: "column-reverse", sm: "column-reverse", md: "row" }}
-              isHome={true}
-            />
-          </Container>
-        </Box>
-        <Box sx={{ paddingBottom: "40px" }}>
-          <Container maxWidth="md" disableGutters={true}>
-            <Stack alignItems="center">
-                <MFCImage
-                  src="/images/top/feature-bg.jpg"
-                  width={908}
-                  height={327}
-                  alt="みんちゅうSHARE-LINフランチャイズの特徴"
-                />
-              <MFCFeatures />
-            </Stack>
-          </Container>
-        </Box>
-      </MFCFVSlideUpAnimation>      
+      <ParentComponent />
       <MFCBookCTA />
       <Box sx={{ position: "relative", padding: "40px 0" }}>
         <Container maxWidth="md">
