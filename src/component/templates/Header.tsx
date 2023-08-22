@@ -18,7 +18,7 @@ export default function Header() {
                 widths={{ xs: 88, sm: 185 }}
                 alt="みんちゅうSHARE-LIN"
               />
-            <Box sx={{ color: '#1C2B58', }}>フランチャイズオーナー募集</Box>
+            <Box sx={{ color: '#1C2B58', fontWeight: "bold" }}>フランチャイズオーナー募集</Box>
           </Stack>
           <Box display={{ xs: 'none', md: 'block' }}>
             <NavButtonList />

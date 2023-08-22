@@ -1,8 +1,7 @@
 import { Box, Card, CardContent, CardMedia, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
-import { ScrollZoom } from '@/component/ScrollZoom.client';
+import { ScrollFade } from '@/component/ScrollFade.client';
 
 import { COLORS } from '@/lib/themeColors';
-import { ScrollFade } from '../ScrollFade.client';
 
 type Card = {
     mainImage: {
@@ -30,9 +29,9 @@ export default function MFCCardList({ cards, minHeight, titleColor }: MFCCardLis
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack justifyContent="center" direction={{ sm: "column", md: "row" }} spacing={2}>
             {cards.map((fcCard, index) => (
-                <ScrollZoom key={index} sx={{ height: "100%", display: "flex" }}>
+                <ScrollFade key={index} sx={{ height: "100%", display: "flex" }}>
                     <CardComponent card={fcCard} minHeight={minHeight} titleColor={titleColor} />
-                 </ScrollZoom>
+                 </ScrollFade>
             ))}
         </Stack>
     );

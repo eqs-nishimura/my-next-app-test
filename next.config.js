@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
+// const nextConfig = {}
+
 const nextConfig = {
-    experimental: {
-      appDir: true,
+    async rewrites() {
+      return [
+        {
+          source: '/(.*)',
+          destination: 'http://localhost:8080',
+        },
+      ]
     },
-  }
+  };
   
-  module.exports = nextConfig
+
+module.exports = nextConfig

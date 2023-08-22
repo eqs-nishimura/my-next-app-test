@@ -1,19 +1,18 @@
 import { Box, Card, CardContent, CardMedia, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
 import { fcFeaturesTop } from '@/lib/fcFeatures';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { ScrollZoom } from '@/component/ScrollZoom.client';
+import { ScrollFade } from '@/component/ScrollFade.client';
 
 import { COLORS } from '@/lib/themeColors';
-import { ScrollFade } from '../ScrollFade.client';
 import MFCImage from '../MFCImage';
 
 export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
             {fcFeaturesTop.map((fcFeature, index) => (
-                <ScrollZoom key={index}>
+                <ScrollFade key={index}>
                     <CardComponent feature={fcFeature} />
-                </ScrollZoom>
+                </ScrollFade>
             ))}
         </Stack>
     );
@@ -31,7 +30,7 @@ export default function MFCFeatures() {
                 right: 0,
                 margin: 'auto' }} />
             </ScrollFade>
-            <Box display={{ xs: 'block', sm: 'none', md: 'block' }} sx={{ p: 1, position: 'relative' }}>
+            <Box display={{ xs: 'block', sm: 'none', md: 'block' }} sx={{ p: 1, position: 'relative', flex: 1 }}>
                 {renderCards(DesktopCard)}
             </Box>
             <Box display={{ xs: 'none', sm: 'block', md: 'none' }} sx={{ p: 3, position: 'relative' }}>
@@ -68,7 +67,7 @@ type CardProps = {
 
 function DesktopCard({ feature }: CardProps) {
   return (
-    <Card sx={{ m: { xs: 1 }, maxWidth: { xs: "none", md: 260 }, borderRadius: "32px", boxShadow: 3 }}>
+    <Card sx={{ m: { xs: 1 }, maxWidth: { xs: "none", md: 260 }, borderRadius: "32px", boxShadow: 3, flex: 1 }}>
       <CardContent sx={{ padding: "20px 30px" }}>
         <Box sx={{ border: `2px solid ${COLORS.orange}`, borderRadius: "9999px", p: 1, textAlign: "center", color: COLORS.orange, fontWeight: "bold" }}>
           {feature.label}

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-import MFCButton from '@/component/templates/MFCButton';
 import MFCBookCTA from '@/component/templates/MFCBookCTA';
 import { ScrollZoom } from '@/component/ScrollZoom.client';
 
@@ -11,14 +9,15 @@ import { COLORS } from '@/lib/themeColors';
 import { fcOwner_flow } from '@/lib/fcOwner';
 import MFCSectionHeader from '@/component/Text/MFCSectionHeader';
 import MFCMainSection from '@/component/templates/MFCMainSection';
+import MFCResponsiveStack from '@/component/templates/MFCResponsiveStack.client';
+import MFCPointButton from '@/component/templates/MFCPointButton.client';
+import MFCOwnerSimulator from '@/component/templates/MFCOwnerSimulator';
 
 export const metadata = {
   title: 'オーナーになるには',
 }
 
-const points = ['法人のみ', '駐車場の開設', '自社の\n駐輪場のみ\n取締可能', '当社指定の\n取締ロックを\n使用'];
-const firstTwoPoints = points.slice(0, 2);
-const lastTwoPoints = points.slice(2);
+const points = ['法人であること', '駐輪場・駐車場\nとして開設できる\n土地があること'];
 
 const MyPage = () => {
   return (
@@ -48,45 +47,15 @@ const MyPage = () => {
       <Box>
         <Container maxWidth="md">
           <Stack alignItems="center" spacing={7}>
-            <Stack direction={{ xs: "column", sm: "column", md: "row" }} spacing={{ xs: 2, sm: 2, md: 3 }}>
-              {[firstTwoPoints, lastTwoPoints].map((pointGroup, index) => (
-                <Stack direction="row" spacing={3} justifyContent="center" key={index}>
-                  {pointGroup.map((point) => (
-                    <ScrollZoom key={point}>
-                      <Stack
-                        justifyContent="center"
-                        alignItems="center"
-                        sx={{
-                          backgroundColor: "#fff",
-                          color: COLORS.orange,
-                          border: `10px solid ${COLORS.lightOrange}`,
-                          borderWidth: { xs: "6px", sm: "10px", md: "10px" },
-                          borderRadius: "9999px",
-                          width: { xs: 140, sm: 200, md: 180 },
-                          height: { xs: 140, sm: 200, md: 180 },
-                          whiteSpace: "pre-wrap",
-                          textAlign: "center",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {point}
-                      </Stack>
-                    </ScrollZoom>
-                  ))}
-                </Stack>
+            <MFCResponsiveStack>
+              {points.map((point, index) => (
+                <MFCPointButton>
+                  {point}
+                </MFCPointButton>
               ))}
-            </Stack>
-            <ScrollZoom>
-              <MFCButton 
-                  href="/contact?seminar=1" 
-                  endIcon={<ArrowCircleRightIcon style={{ transform: 'rotate(90deg)' }} />} 
-                  isRound={true} 
-                  sx={{ width: 300, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {
-                    backgroundColor: COLORS.darkBlue
-                  } }}
-                >オーナー条件の詳細をみる</MFCButton>
-            </ScrollZoom>
+            </MFCResponsiveStack>       
           </Stack>
+          <MFCOwnerSimulator />
         </Container>
       </Box>
       <Box sx={{ position: "relative", padding: "80px 0 40px" }}>
@@ -105,7 +74,7 @@ const MyPage = () => {
                           <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
                         ))}
                       </Typography>
-                      <Box component="p" sx={{ flex: 1 }}>{flow.description}</Box>
+                      <Box component="p" sx={{ flex: 1, whiteSpace: "pre-wrap" }}>{flow.description}</Box>
                     </Stack>
                   </ScrollZoom>
                   {index < fcOwner_flow.length - 1 && <ScrollZoom><Stack alignItems="center"><ArrowBackIosNewIcon style={{ transform: 'rotate(-90deg)' }} /></Stack></ScrollZoom>}

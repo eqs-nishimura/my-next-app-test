@@ -1,8 +1,7 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 import MFCButton from './MFCButton';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
-import { ScrollZoom } from '@/component/ScrollZoom.client';
-import { ScrollFade } from '../ScrollFade.client';
+import { ScrollFade } from '@/component/ScrollFade.client';
 import MFCSectionHeader from '../Text/MFCSectionHeader';
 import MFCImage from '../MFCImage';
 
@@ -26,10 +25,10 @@ export default function MFCBookCTA() {
                         </ScrollFade>
                     </Box>
                 <Stack spacing={4} sx={{ position: "relative", top: "50px", marginBottom: "100px" }}>
-                    <ScrollZoom>
+                    <ScrollFade>
                         <MFCSectionHeader title="まずはお気軽に仕組みや条件をご確認ください！" subtitle="みんちゅうSHARE-LINでフランチャイズ" titleColor='white' subtitleColor='white' textShadow="0px 0px 10px rgba(0, 0, 0, 0.8)" />
-                    </ScrollZoom>
-                    <ScrollZoom>
+                    </ScrollFade>
+                    <ScrollFade>
                         <Box sx={{ backgroundColor: "#fff", padding: { xs: "20px", sm: "35px" }, borderRadius: "32px" }}>
                             <Stack alignItems="center" spacing={3}>
                                 <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={6}>
@@ -56,7 +55,7 @@ export default function MFCBookCTA() {
                                     >説明会を予約する</MFCButton>
                             </Stack>
                         </Box>
-                    </ScrollZoom> 
+                    </ScrollFade> 
                 </Stack>
             </Stack>
         </Container>       

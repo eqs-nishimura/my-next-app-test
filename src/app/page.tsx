@@ -5,13 +5,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MFCFeatures from '@/component/templates/MFCFeatures';
 import MFCBookCTA from '@/component/templates/MFCBookCTA';
 import MFCCardList from '@/component/templates/MFCCard';
-import { ScrollZoom } from '@/component/ScrollZoom.client';
+import { ScrollFade } from '@/component/ScrollFade.client';
 
 import { fcCards_ownerWork_Top, fcCards_ownerVoice_Top } from '@/lib/fcCards';
 import { fcFeaturesTop } from '@/lib/fcFeatures';
 
 import { COLORS } from '@/lib/themeColors';
-import { ScrollFade } from '@/component/ScrollFade.client';
 import MFCSectionHeader from '@/component/Text/MFCSectionHeader';
 import MFCMainSection from '@/component/templates/MFCMainSection';
 import MFCImage from '@/component/MFCImage';
@@ -64,12 +63,12 @@ export default function HomePage() {
       <Box sx={{ position: "relative", padding: "40px 0" }}>
         <Container maxWidth="md">
           <Stack spacing={3}>
-            <ScrollZoom>
+            <ScrollFade>
               <MFCSectionHeader title="オーナーの仕事について" subtitle="OWNER&apos;s Work" />
-            </ScrollZoom>
-            <MFCCardList cards={fcCards_ownerWork_Top} />
+            </ScrollFade>
+            <MFCCardList cards={fcCards_ownerWork_Top} minHeight={450} />
             <Stack alignItems="center">
-              <ScrollZoom>
+              <ScrollFade>
                 <List>
                   <ListItem disablePadding>
                     <ListItemIcon sx={{ marginRight: "8px", minWidth: 'auto' }}>
@@ -93,13 +92,13 @@ export default function HomePage() {
                       }} />
                   </ListItem>
                 </List>
-              </ScrollZoom>
-              <ScrollZoom>
+              </ScrollFade>
+              <ScrollFade>
                 <ArrowDropDownIcon sx={{ fontSize: "100px", color: "#FCB900" }} />
-              </ScrollZoom>
-              <ScrollZoom>
+              </ScrollFade>
+              <ScrollFade>
                 <Typography sx={{ fontWeight: "bold", textAlign: "center" }} variant="h5" component="div">みんちゅうSHARE-LIN<br />フランチャイズで、実現可能です！</Typography>
-              </ScrollZoom>
+              </ScrollFade>
             </Stack>
           </Stack>
         </Container>
@@ -107,12 +106,12 @@ export default function HomePage() {
       <Box sx={{ padding: "40px 0" }}>
         <Container maxWidth="md">
           <Stack spacing={4}>
-            <ScrollZoom>
+            <ScrollFade>
               <MFCSectionHeader title="サポート体制" subtitle="Support Of MINCHU-SHARELIN" />
-            </ScrollZoom>
+            </ScrollFade>
             <Stack spacing={3}>
               {fcFeaturesTop.map((feature, index) => (
-              <ScrollZoom key={index}>
+              <ScrollFade key={index}>
                 <Box sx={{ position: "relative", backgroundColor: "#fff", borderRadius: "32px", p: { xs: 2, sm: 4 }, boxShadow: 3, }}>
                   <Typography component="div" variant="h1" color={COLORS.orange} sx={{ position: "absolute", top: { xs: "16px", sm: "30px" }, right: { xs: "16px", sm: "30px" }, fontWeight: "bold", opacity: 0.1 }} >{feature.id}</Typography>
                   <Stack spacing={3}>
@@ -153,7 +152,7 @@ export default function HomePage() {
                     </Stack>
                   </Stack>
                 </Box>
-              </ScrollZoom>
+              </ScrollFade>
               ))}
             </Stack>
           </Stack>
@@ -163,9 +162,9 @@ export default function HomePage() {
       <Box sx={{ position: "relative", padding: "40px 0" }}>
         <Container maxWidth="md">
           <Stack spacing={4}>
-            <ScrollZoom>
+            <ScrollFade>
               <MFCSectionHeader title="活躍中の先輩オーナーの声" subtitle="Owner&apos;s Voice" />
-            </ScrollZoom>
+            </ScrollFade>
             <MFCCardList cards={fcCards_ownerVoice_Top} />
           </Stack>
         </Container>
