@@ -47,25 +47,21 @@ export const ParentComponent: React.FC = () => {
                 isSlideUpFinished={isSlideUpFinished}
                 />
                 <SlideIn duration={0.5} delay={2 + slideUpDuration + slideUpDelay} angle={0} inView={isSlideUpFinished}>
-                    <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
-                        <MFCButton glowEffect={true}
-                        href="/contact?seminar=1" 
-                        startIcon={<EditCalendarIcon />} 
-                        isRound={true} 
-                        sx={{ width: 200, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": {
-                            backgroundColor: COLORS.darkBlue
-                        } }}
-                        >説明会を予約する</MFCButton>
-                        <MFCButton
-                        href="/contact" 
-                        startIcon={<EmailIcon />} 
-                        isRound={true} 
-                        sx={{ width: 200, backgroundColor: "#B01A1A", color: "#fff", "&:hover": {
-                            backgroundColor: "#B01A1A"
-                        } }}
-                        >お問い合わせ</MFCButton>
-                    </Stack>
-                    </SlideIn>
+                <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
+                    <MFCButton glowEffect={true}
+                    href="/contact?seminar=1"
+                    startIcon={<EditCalendarIcon />}
+                    isRound={true}
+                    sx={{ width: 200, backgroundColor: COLORS.darkBlue, color: "#fff", "&:hover": { backgroundColor: COLORS.darkBlue } }}
+                    >説明会を予約する</MFCButton>
+                    <MFCButton
+                    href="/contact"
+                    startIcon={<EmailIcon />}
+                    isRound={true}
+                    sx={{ width: 200, backgroundColor: "#B01A1A", color: "#fff", "&:hover": { backgroundColor: "#B01A1A" } }}
+                    >お問い合わせ</MFCButton>
+                </Stack>
+                </SlideIn>
                 </Stack>
                 <MFCImage
                         src="/images/top/fv-main.png"
