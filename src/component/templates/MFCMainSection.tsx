@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Stack } from '@mui/material';
+import { Box, Slide, Stack } from '@mui/material';
 import { COLORS } from '@/lib/themeColors';
 import MFCTitle, { TitleWithDescriptionProps } from '@/component/Text/MFCTitle'; // MFCTitleコンポーネントをインポート
 import MFCButton from './MFCButton'; // MFCButtonコンポーネントをインポート
@@ -45,7 +45,6 @@ const MFCMainSection = ({
 }: MainSectionProps) => {
   return (
     <Stack spacing={2} direction={stackDirection} alignItems="center">
-        <FadeZoomBox animationType="fade">
         <Stack spacing={3} alignItems="center" sx={{ flex: 1 }}>
             <MFCTitle {...titleProps} />
             {isHome && (
@@ -69,9 +68,7 @@ const MFCMainSection = ({
               </Stack>
             )}            
         </Stack>
-        </FadeZoomBox>
         {imageSrc && imageWidth && imageHeight && imageWidths && imageHeights && altText && (
-          <FadeZoomBox animationType="zoom">            
             <MFCImage
                 src={imageSrc}
                 width={imageWidth}
@@ -80,9 +77,8 @@ const MFCMainSection = ({
                 heights={imageHeights}
                 alt={altText}
               />
-        </FadeZoomBox>
         )}
-    </Stack>
+    </Stack>      
   );
 };
 

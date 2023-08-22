@@ -7,7 +7,7 @@ import MFCImage from '../MFCImage';
 
 export default function Header() {
   return (
-    <AppBar component="header" position="static" elevation={6} sx={{ backgroundColor: "transparent", borderWidth: 0, }}>
+    <AppBar component="header" position="static" elevation={6} sx={{ backgroundColor: "#fff", borderWidth: 0, }}>
       <Container maxWidth="md" sx={{ padding: "6px 10px" }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Stack direction="row" alignItems="center" spacing={1}>            

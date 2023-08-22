@@ -5,14 +5,16 @@ import { ScrollFade } from '@/component/ScrollFade.client';
 
 import { COLORS } from '@/lib/themeColors';
 import MFCImage from '../MFCImage';
+import { SlideIn } from '@/component/MFCAnimation';
+
 
 export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
             {fcFeaturesTop.map((fcFeature, index) => (
-                <ScrollFade key={index}>
-                    <CardComponent feature={fcFeature} />
-                </ScrollFade>
+            <SlideIn key={index} duration={0.5} delay={1*index} angle={0} inView={true}>
+              <CardComponent feature={fcFeature} />
+            </SlideIn>
             ))}
         </Stack>
     );

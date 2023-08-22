@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Stack, Typography, TypographyProps } from '@mui/material';
 import { COLORS } from '@/lib/themeColors';
 import { Breakpoint } from '@mui/system';
+import { SlideIn } from '../MFCAnimation';
 
 export type TitleWithDescriptionProps = {
   title: string[];
@@ -31,7 +32,7 @@ const MFCTitle = ({
   fontSize = { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3rem', xl: '3rem' }
 }: TitleWithDescriptionProps) => {
   return (
-    <Stack spacing={3}>
+      <Stack spacing={3}>
       <Stack>
         {subtitle && (
             <Typography color={subtitleColor} sx={{ fontWeight: fontWeight, textAlign: subtitleTextAlign }} variant="subtitle1" component="p">
@@ -42,7 +43,9 @@ const MFCTitle = ({
         )}
         <Typography color={titleColor} sx={{ fontWeight: fontWeight, textAlign: titleTextAlign, fontSize: fontSize }} variant="h3" component="h1">
           {title.map((line, index) => (
-            <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
+            <SlideIn key={index} duration={0.5} delay={1*index} angle={0}>
+              <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
+            </SlideIn>
           ))}
         </Typography>
       </Stack>
