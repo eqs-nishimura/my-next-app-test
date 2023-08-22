@@ -109,13 +109,13 @@ interface MFCFVSlideUpAnimationProps {
   backgroundColor?: string;
 }
 
-export const MFCFVSlideUpAnimation: React.FC<MFCFVSlideUpAnimationProps> = ({ duration = 4, delay = 1, backgroundColor = COLORS.darkBlue, children }) => {
+export const MFCFVSlideUpAnimation: React.FC<MFCFVSlideUpAnimationProps> = ({ duration = 4, delay = 5, backgroundColor = COLORS.darkBlue, children }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
