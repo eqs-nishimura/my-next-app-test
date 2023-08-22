@@ -12,7 +12,7 @@ export default function MFCFeatures() {
     const renderCards = (CardComponent: React.FC<CardProps>) => (
         <Stack direction={{ sm: "column", md: "row" }} spacing={3} sx={{ marginTop: { sm: 0, md: "-85px" } }}>
             {fcFeaturesTop.map((fcFeature, index) => (
-            <SlideIn key={index} duration={0.5} delay={1*index} angle={0} inView={true}>
+            <SlideIn key={index} duration={0.5} delay={0.5*index} angle={0} inView={true}>
               <CardComponent feature={fcFeature} />
             </SlideIn>
             ))}

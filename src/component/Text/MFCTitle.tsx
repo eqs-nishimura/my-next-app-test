@@ -43,7 +43,7 @@ const MFCTitle = ({
         )}
         <Typography color={titleColor} sx={{ fontWeight: fontWeight, textAlign: titleTextAlign, fontSize: fontSize }} variant="h3" component="h1">
           {title.map((line, index) => (
-            <SlideIn key={index} duration={0.5} delay={1*index} angle={0}>
+            <SlideIn key={index} duration={0.5} delay={0.5*index} angle={0}>
               <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
             </SlideIn>
           ))}
