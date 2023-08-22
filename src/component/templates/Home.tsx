@@ -21,7 +21,7 @@ export const ParentComponent: React.FC = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
           setIsSlideUpFinished(true);
-        }, (slideUpDuration + slideUpDelay) * 1000);
+        }, (slideUpDuration + slideUpDelay) * 2000);
     
         return () => clearTimeout(timer);
       }, []);

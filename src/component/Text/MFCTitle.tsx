@@ -38,7 +38,7 @@ const MFCTitle = ({
   slideUpDelay = 0.3
 }: TitleWithDescriptionProps) => {
   const titleDelay = isSlideUpFinished ? 0.1 : 0.1 + slideUpDuration + slideUpDelay;
-  const descriptionDelay = isSlideUpFinished ? 1.1 : 1.1 + slideUpDuration + slideUpDelay;
+  const descriptionDelay = isSlideUpFinished ? 2.1 : 2.1 + slideUpDuration + slideUpDelay;
   return (
     <Stack spacing={3}>
       <Stack>
