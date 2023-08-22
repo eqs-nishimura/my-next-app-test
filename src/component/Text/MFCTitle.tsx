@@ -52,7 +52,9 @@ const MFCTitle = ({
       {description && (
         <Box sx={{ color: descriptionColor, textAlign: descriptionTextAlign }}>
         {description.map((line, index) => (
+          <SlideIn key={index} duration={0.5} delay={0.5*index+1.5} angle={0}>
           <Box component="span" sx={{ display: "inline-block" }} key={index}>{line}</Box>
+          </SlideIn>
         ))}
         </Box>
       )}

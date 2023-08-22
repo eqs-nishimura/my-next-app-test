@@ -7,6 +7,7 @@ import FadeZoomBox from '@/component/FadeZoomBox.client';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar'; // 適切なアイコンをインポート
 import EmailIcon from '@mui/icons-material/Email'; // 適切なアイコンをインポート
 import MFCImage from '../MFCImage';
+import { SlideIn } from '../MFCAnimation';
 
 type MainSectionProps = {
   titleProps: TitleWithDescriptionProps;
@@ -48,6 +49,7 @@ const MFCMainSection = ({
         <Stack spacing={3} alignItems="center" sx={{ flex: 1 }}>
             <MFCTitle {...titleProps} />
             {isHome && (
+              <SlideIn duration={0.5} delay={2} angle={0}>
               <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
                 <MFCButton glowEffect={true}
                 href="/contact?seminar=1" 
@@ -66,6 +68,7 @@ const MFCMainSection = ({
                 } }}
                 >お問い合わせ</MFCButton>
               </Stack>
+              </SlideIn>
             )}            
         </Stack>
         {imageSrc && imageWidth && imageHeight && imageWidths && imageHeights && altText && (
