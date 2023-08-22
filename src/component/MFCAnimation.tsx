@@ -105,7 +105,7 @@ interface MFCFVSlideUpAnimationProps {
   backgroundColor?: string;
 }
 
-export const MFCFVSlideUpAnimation: React.FC<MFCFVSlideUpAnimationProps> = ({ duration = 4, delay = 2, backgroundColor = COLORS.darkBlue, children }) => {
+export const MFCFVSlideUpAnimation: React.FC<MFCFVSlideUpAnimationProps> = ({ duration = 5, delay = 5, backgroundColor = COLORS.darkBlue, children }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
