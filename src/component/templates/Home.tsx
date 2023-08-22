@@ -18,13 +18,17 @@ export const ParentComponent: React.FC = () => {
     const slideUpDelay = 2; // MFCFVSlideUpAnimationのdelayを指定
     const slideInDelayIncrement = 0.5; // SlideInのアニメーションの遅延増分を指定
     
+    const [slideUpFinished, setSlideUpFinished] = useState(false);
+
     useEffect(() => {
-        const timer = setTimeout(() => {
-          setIsSlideUpFinished(true);
-        }, (slideUpDuration + slideUpDelay) * 500);
-    
-        return () => clearTimeout(timer);
-      }, []);
+      const timer = setTimeout(() => {
+        setSlideUpFinished(true);
+      }, 800); // Adjust the delay based on MFCFVSlideUpAnimation duration
+  
+      return () => {
+        clearTimeout(timer);
+      };
+    }, []);
   
     return (
       <div>
