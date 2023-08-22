@@ -14,19 +14,22 @@ import MFCFeatures from './MFCFeatures';
 
 export const ParentComponent: React.FC = () => {
     const [isSlideUpFinished, setIsSlideUpFinished] = useState(false);
+    const [titleSlideIn, setTitleSlideIn] = useState(false);
     const slideUpDuration = 4; // MFCFVSlideUpAnimationのdurationを指定
     const slideUpDelay = 2; // MFCFVSlideUpAnimationのdelayを指定
-    const slideInDelayIncrement = 0.5; // SlideInのアニメーションの遅延増分を指定
     
-    const [slideUpFinished, setSlideUpFinished] = useState(false);
-
     useEffect(() => {
-      const timer = setTimeout(() => {
-        setSlideUpFinished(true);
-      }, 800); // Adjust the delay based on MFCFVSlideUpAnimation duration
+      const timer1 = setTimeout(() => {
+        setIsSlideUpFinished(true);
+      }, (slideUpDelay + slideUpDuration) * 1000); // Adjust the delay based on MFCFVSlideUpAnimation duration and delay
+
+      const timer2 = setTimeout(() => {
+        setTitleSlideIn(true);
+      }, (slideUpDelay + slideUpDuration + 1) * 1000); // Adjust the delay for title SlideIn
   
       return () => {
-        clearTimeout(timer);
+        clearTimeout(timer1);
+        clearTimeout(timer2);
       };
     }, []);
   
@@ -48,9 +51,9 @@ export const ParentComponent: React.FC = () => {
                   "不正駐輪撲滅を実現し、",
                   "誰もが安心して暮らせるまちづくりを"
                 ]}
-                isSlideUpFinished={isSlideUpFinished}
+                isSlideUpFinished={titleSlideIn}
                 />
-                <SlideIn duration={0.5} delay={2 + slideUpDuration + slideUpDelay} angle={0} inView={isSlideUpFinished}>
+                <SlideIn duration={0.5} delay={2 + slideUpDuration + slideUpDelay} angle={0} inView={titleSlideIn}>
                 <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
                     <MFCButton glowEffect={true}
                     href="/contact?seminar=1"
@@ -92,8 +95,6 @@ export const ParentComponent: React.FC = () => {
           </Container>
         </Box>
         </MFCFVSlideUpAnimation>
-
-
       </div>
     );
   };
