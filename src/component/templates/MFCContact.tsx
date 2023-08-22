@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 
 import { ContactFormData } from '@/lib/types';
-import { sendMail } from '@/utils/mailService';
+// import { sendMail } from '@/utils/mailService';
 
 export const MFCContact = () => {
   const initialState: ContactFormData = {
@@ -55,7 +55,7 @@ export const MFCContact = () => {
   };
   
   const handleConfirmation = () => {
-    sendMail(formData);
+    // sendMail(formData);
     setCurrentStep(2);
   };
 
