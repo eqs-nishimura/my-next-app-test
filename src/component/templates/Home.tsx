@@ -14,14 +14,14 @@ import MFCFeatures from './MFCFeatures';
 
 export const ParentComponent: React.FC = () => {
     const [isSlideUpFinished, setIsSlideUpFinished] = useState(false);
-    const slideUpDuration = 3; // MFCFVSlideUpAnimationのdurationを指定
-    const slideUpDelay = 3; // MFCFVSlideUpAnimationのdelayを指定
+    const slideUpDuration = 4; // MFCFVSlideUpAnimationのdurationを指定
+    const slideUpDelay = 2; // MFCFVSlideUpAnimationのdelayを指定
     const slideInDelayIncrement = 0.5; // SlideInのアニメーションの遅延増分を指定
     
     useEffect(() => {
         const timer = setTimeout(() => {
           setIsSlideUpFinished(true);
-        }, (slideUpDuration + slideUpDelay) * 2000);
+        }, (slideUpDuration + slideUpDelay) * 500);
     
         return () => clearTimeout(timer);
       }, []);
