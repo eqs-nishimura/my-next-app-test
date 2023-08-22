@@ -49,7 +49,7 @@ const MFCMainSection = ({
         <Stack spacing={3} alignItems="center" sx={{ flex: 1 }}>
             <MFCTitle {...titleProps} />
             {isHome && (
-              <SlideIn duration={0.5} delay={2} angle={0}>
+              <SlideIn duration={0.5} delay={3} angle={0}>
               <Stack direction={{ xs: "column", sm: "row" }} alignItems="center" spacing={1}>
                 <MFCButton glowEffect={true}
                 href="/contact?seminar=1" 
