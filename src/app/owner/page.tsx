@@ -49,7 +49,7 @@ const MyPage = () => {
           <Stack alignItems="center" spacing={7}>
             <MFCResponsiveStack>
               {points.map((point, index) => (
-                <MFCPointButton>
+                <MFCPointButton key={index}>
                   {point}
                 </MFCPointButton>
               ))}
