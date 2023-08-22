@@ -19,10 +19,10 @@ export type TitleWithDescriptionProps = {
 };
 
 interface MFCTitleProps extends TitleWithDescriptionProps {
-  isSlideUpFinished: boolean;
+  isSlideUpFinished?: boolean;
 }
 
-const MFCTitle: React.FC<MFCTitleProps> = ({ title, subtitle, description, titleColor, subtitleColor, descriptionColor, fontWeight, titleTextAlign, subtitleTextAlign, descriptionTextAlign, fontSize, isSlideUpFinished }) => {
+const MFCTitle: React.FC<MFCTitleProps> = ({ title, subtitle, description, titleColor, subtitleColor, descriptionColor, fontWeight, titleTextAlign, subtitleTextAlign, descriptionTextAlign, fontSize, isSlideUpFinished = false }) => {
   return (
     <Stack spacing={3}>
       <Stack>
