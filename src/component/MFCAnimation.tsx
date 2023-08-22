@@ -43,7 +43,7 @@ interface SlideInProps {
   inView?: boolean; // 追加
 }
 
-export const SlideIn: React.FC<SlideInProps> = ({ children, duration = 1, delay = 0, angle = 0, inView = true }) => {
+export const SlideIn: React.FC<SlideInProps> = ({ children, duration = 1, delay = 0, angle = 0, inView = false }) => {
   const [isVisible, setIsVisible] = useState(!inView); // 初期値を変更
   const ref = useRef(null);
   const theme = useTheme();
@@ -55,6 +55,10 @@ export const SlideIn: React.FC<SlideInProps> = ({ children, duration = 1, delay 
         ([entry]) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
+          }
+          // 表示領域から外れた場合
+          else {
+            setIsVisible(false);
           }
         },
         {
@@ -111,7 +115,7 @@ export const MFCFVSlideUpAnimation: React.FC<MFCFVSlideUpAnimationProps> = ({ du
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 100);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
