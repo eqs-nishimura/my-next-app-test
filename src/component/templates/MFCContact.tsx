@@ -33,6 +33,23 @@ export const MFCContact = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [currentStep, setCurrentStep] = useState(0);
 
+  async function sendToAPI(data: ContactFormData): Promise<{ success: boolean }> {
+    const endpointURL = "https://86klkqbcoe.execute-api.us-east-1.amazonaws.com/dev"; // こちらは開発ステージのURL
+    const response = await fetch(endpointURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  
+    if (!response.ok) {
+      throw new Error('API request failed');
+    }
+  
+    return response.json();
+  }
+
   const validateForm = () => {
     const errors: { [key: string]: string } = {};
     if (!formData.name) errors['name'] = '名前は必須です。';
@@ -54,9 +71,14 @@ export const MFCContact = () => {
     }
   };
   
-  const handleConfirmation = () => {
-    // sendMail(formData);
-    setCurrentStep(2);
+  const handleConfirmation = async () => {
+    try {
+      await sendToAPI(formData);
+      setCurrentStep(2);
+    } catch (error) {
+      console.error("Failed to send the form data:", error);
+      // 必要に応じて、ユーザーにエラーメッセージを表示するロジックを追加
+    }
   };
 
   const resetForm = () => {
