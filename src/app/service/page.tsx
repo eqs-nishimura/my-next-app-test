@@ -13,6 +13,7 @@ import { COLORS } from '@/lib/themeColors';
 
 import { ScrollFade } from '@/component/ScrollFade.client';
 import { ScrollZoom } from '@/component/ScrollZoom.client';
+import Header from '@/component/templates/Header';
 
 export const metadata = {
   title: 'みんちゅうSHARE-LINについて',
@@ -20,6 +21,8 @@ export const metadata = {
 
 const MyPage = () => {
   return (
+    <>
+    <Header />
     <Box sx={{ backgroundColor: "#FFF8E7" }}>
       <Box sx={{ padding: { xs: "30px 10px", sm: "30px 10px", md: "30px 10px" } }}>
         <Container maxWidth="md">          
@@ -110,6 +113,7 @@ const MyPage = () => {
       </Box>
       <MFCBookCTA />
     </Box>
+    </>
   );
 };
 

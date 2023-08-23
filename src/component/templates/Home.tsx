@@ -21,11 +21,11 @@ export const ParentComponent: React.FC = () => {
     useEffect(() => {
       const timer1 = setTimeout(() => {
         setIsSlideUpFinished(true);
-      }, (slideUpDelay + slideUpDuration) * 1000); // Adjust the delay based on MFCFVSlideUpAnimation duration and delay
+      }, (slideUpDelay + slideUpDuration) * 3000); // Adjust the delay based on MFCFVSlideUpAnimation duration and delay
 
       const timer2 = setTimeout(() => {
         setTitleSlideIn(true);
-      }, (slideUpDelay + slideUpDuration + 1) * 1000); // Adjust the delay for title SlideIn
+      }, (slideUpDelay + slideUpDuration + 1) * 3000); // Adjust the delay for title SlideIn
   
       return () => {
         clearTimeout(timer1);

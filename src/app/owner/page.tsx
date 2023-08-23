@@ -12,6 +12,7 @@ import MFCMainSection from '@/component/templates/MFCMainSection';
 import MFCResponsiveStack from '@/component/templates/MFCResponsiveStack.client';
 import MFCPointButton from '@/component/templates/MFCPointButton.client';
 import MFCOwnerSimulator from '@/component/templates/MFCOwnerSimulator';
+import Header from '@/component/templates/Header';
 
 export const metadata = {
   title: 'オーナーになるには',
@@ -21,6 +22,8 @@ const points = ['法人であること', '駐輪場・駐車場\nとして開設
 
 const MyPage = () => {
   return (
+    <>
+    <Header />
     <Box sx={{ backgroundColor: "#FFF8E7" }}>
       <Box sx={{ padding: { xs: "30px 10px", sm: "30px 10px", md: "30px 10px" } }}>
         <Container maxWidth="md">
@@ -86,6 +89,7 @@ const MyPage = () => {
       </Box>       
       <MFCBookCTA />
     </Box>
+    </>
   );
 };
 
